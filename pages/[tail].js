@@ -1,6 +1,6 @@
 import { getJSONFromDifferentSources } from '../utils/getJSONFromDifferentSources';
-import { hasuraQuery } from '../lib/hasura';
-import { getLongTailIdQuery } from '../graphql/getLongTailId';
+import { GetTailIdQuery } from '../graphql/GetLongTailId';
+import apolloClient from '../apollo-client';
 
 import styles from '../styles/tail/Tail.module.css';
 
@@ -55,8 +55,11 @@ export async function getServerSideProps( { params } ) {
       NEXT_PUBLIC_DATA_PATH: JSON_SOURCE_PATH,
     } = process.env;
 
-    const { data } = await hasuraQuery(getLongTailIdQuery, {
-      tail: tailSlug
+    const { data } = await apolloClient.query({
+      query: GetTailIdQuery,
+      variables: {
+        tail: tailSlug
+      }
     });
 
     const tailId = data?.long_tails[0];
