@@ -1,0 +1,28 @@
+.wrapper {
+    padding: 25px 50px;
+}
+
+.pageTitle {
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+}
+
+.infoContainer .blockTitle {
+    font-size: 24px;
+}
+
+.infoContainer .row {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.infoContainer .row .value {
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.infoContainer .row:not(:last-child) {
+    margin-bottom: 20px;
+}
