@@ -1,6 +1,7 @@
 import { getJSONFromDifferentSources } from '../utils/getJSONFromDifferentSources';
 import { hasuraQuery } from '../lib/hasura';
 import { getLongTailIdQuery } from '../graphql/getLongTailId';
+
 import styles from '../styles/tail/Tail.module.css';
 
 function Tail( { tail, error } ) {
